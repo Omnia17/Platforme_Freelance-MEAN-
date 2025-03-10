@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- Breadcrumbs -->
+        <div class="bredcrumb_wrap">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Active Bids</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <!-- Single Wrap -->
+        <div class="_dashboard_content">
+            <div class="_dashboard_content_header">
+                <div class="_dashboard__header_flex">
+                    <h4><i class="ti-layers mr-1"></i>Active Bids</h4>
+                </div>
+            </div>
+
+            <div class="_dashboard_content_body p-0">
+                <div class="_grouping_list_task">
+
+                    @for(proposal of proposals; track proposal._id){
+                    <!-- Single List -->
+                    <div class="_manage_task_list">
+                        <div class="_manage_task_list_flex">
+                            <h4 class="_jb_title"> {{ proposal.idService.name }} </h4>
+
+                            <ul class="_action_grouping_list">
+
+                                <li>
+                                    <a (click)="delete(proposal._id)" data-toggle="tooltip" data-placement="top" title=""
+                                        class="_delete_point" data-original-title="Delete Job"><i
+                                            class="fa fa-trash"></i></a></li>
+                                <li>
+                                    
+                                    @if(proposal.status){
+                                        <span class="badge bg-success text-light p-2">approved</span>
+                                    }@else {
+                                        <span class="badge bg-warning text-light p-2">pending</span>
+                                    }
+
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="_manage_task_list_right">
+                            <div class="_act_tsk_info">
+                                <ul class="_act_tsk_list">
+                                    <li>
+                                        <div class="_act_capt_01">
+                                            <h5>${{proposal.price}}</h5>
+                                            <span>Hourly Rate</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="_act_capt_01">
+                                            <h5>{{ proposal.days }} days</h5>
+                                            <span>Delivery Time</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    }
+
+                </div>
+            </div>
+        </div>
+        <!-- Single Wrap End -->
+
+    </div>
+</div>

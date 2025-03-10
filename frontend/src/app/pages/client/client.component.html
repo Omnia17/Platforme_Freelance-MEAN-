@@ -1,0 +1,53 @@
+     <!-- ============================ Page Title Start================================== -->
+     <div class="page-title bg-cover" style="background:url(assets/img/bn-1.jpg)no-repeat;" data-overlay="5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Page Title End ================================== -->
+
+    <!-- ============================ Main Section Start ================================== -->
+    <section class="gray-bg pt-4">
+        <div class="container-fluid">
+            <div class="row m-0">
+
+                <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+                    <div class="dashboard-navbar overlio-top">
+
+                        <div class="d-user-avater">
+                            <img [src]=" 'http://127.0.0.1:5000/image/' + user.image " class="img-fluid rounded" alt="idk">
+
+                            <h4>{{user.firstname + ' ' + user.lastname}}</h4>
+                            <span>Canada USA</span>
+                        </div>
+
+                        <div class="d-navigation">
+                            <ul id="metismenu">
+                                <li class="active"><a routerLink="/client"><i class="ti-dashboard"></i>Dashboard</a></li>
+                                <li><a routerLink="/client/profile"><i class="ti-user"></i>My Profile</a></li>
+                                <li><a routerLink="/client/myproposals"><i class="ti-user"></i>My Proposals</a></li>
+                                <li><a routerLink="/client/myservices"><i class="ti-user"></i>My Services and projects</a>
+                                </li>
+                                <li><a routerLink="/client/post"><i class="ti-user"></i>Post</a></li>
+
+                                <li><a (click)="logout()"><i class="ti-power-off"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Item Wrap Start -->
+                <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+
+
+<router-outlet></router-outlet>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Main Section End ================================== -->

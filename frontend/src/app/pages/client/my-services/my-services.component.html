@@ -1,0 +1,40 @@
+<div class="row">
+
+    @for(service of services; track service._id){
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="ser_110 shadow_0">
+            <div class="ser_110_thumb">
+                <a (click)="delete(service._id)" class="likes"><i class="fa fa-trash"></i></a>
+                <a [routerLink]="['/client/service-proposals', service._id]" >  
+                    <img [src]="'http://127.0.0.1:5000/image/' + service.image" class="img-fluid" alt="image"></a>
+            </div>
+            <div class="ser_110_caption">
+
+                <div class="ser_title098">
+                    <h4 class="_ser_title"><a [routerLink]="['/client/service-proposals', service._id]" >  {{ service.name }} </a></h4>
+                    <p> {{ service.description.substr(0, 100) }} </p>
+                </div>
+            </div>
+            <div class="ser_110_footer">
+                <div class="_110_foot_left">
+                    <div class="_autho098"> 
+                        <img [src]=" 'http://127.0.0.1:5000/image/' + service.idUser.image " class="img-fluid circle" alt="">
+                   
+                    <img
+                            src="assets/img/verify.svg" class="verified" width="12" alt="">
+                    </div>
+                    <div class="_autho097">
+                        <h5><a href="author-detail.html"> {{ service.idUser.firstname + ' ' + service.idUser.lastname }} </a></h5>
+                    </div>
+                </div>
+                <div class="_110_foot_right">
+                    <div class="_oi0po"><i class="fa fa-bolt"></i>From<strong class="theme-cl">${{service.salary}}</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    }
+
+</div>

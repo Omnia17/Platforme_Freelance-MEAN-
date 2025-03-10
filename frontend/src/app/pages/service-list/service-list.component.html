@@ -1,0 +1,92 @@
+    <!-- ============================ Page Title Start================================== -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <h2 class="ipt-title">Search Services</h2>
+                    <span class="ipn-subtitle">Browse All Services List View</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Page Title End ================================== -->
+
+    <!-- ============================ Main Section Start ================================== -->
+    <section class="gray-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <!-- Filter Search -->
+                    <div class="_filt_tag786">
+                        <div class="_tag782">
+                            <div class="_tag780"> {{ services.length }}  Items found</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                @for(service of services; track service._id){
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="ser_110 shadow_0">
+                            <div class="ser_110_thumb">
+                              
+                                <a [routerLink]="['/service', service._id]" >
+                         <img [src]="'http://127.0.0.1:5000/image/' + service.image" class="img-fluid" alt=""></a>
+                            </div>
+                            <div class="ser_110_caption">
+                
+                                <div class="ser_title098">
+                                    <h4 class="_ser_title"><a [routerLink]="['/service', service._id]" >  {{ service.name }} </a></h4>
+                                    <p> {{ service.description.substr(0, 100) }} </p>
+                                </div>
+                            </div>
+                            <div class="ser_110_footer">
+                                <div class="_110_foot_left">
+                                    <div class="_autho098"><img [src]=" 'http://127.0.0.1:5000/image/' + service.idUser.image " class="img-fluid circle" alt=""><img
+                                            src="assets/img/verify.svg" class="verified" width="12" alt="">
+                                    </div>
+                                    <div class="_autho097">
+                                        <h5><a href="author-detail.html"> {{ service.idUser.firstname + ' ' + service.idUser.lastname }} </a></h5>
+                                    </div>
+                                </div>
+                                <div class="_110_foot_right">
+                                    <div class="_oi0po"><i class="fa fa-bolt"></i>From<strong class="theme-cl">${{service.salary}}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    }
+                
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Main Section End ================================== -->
+
+    <!-- ============================ Call To Action Start ================================== -->
+    <section class="call-to-act" style="background:#b00bec url(assets/img/landing-bg.png) no-repeat">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-7 col-md-8">
+                    <div class="clt-caption text-center mb-4">
+                        <h2 class="text-light">Subscribe Now!</h2>
+                        <p class="text-light">Simple pricing plans. Unlimited web maintenance service</p>
+                    </div>
+                    <div class="inner-flexible-box subscribe-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control large" placeholder="Enter your mail here">
+                            <button class="btn btn-subscribe bg-dark" type="button"><i
+                                    class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Call To Action End ================================== -->

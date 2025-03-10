@@ -1,0 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
+.error{
+    border: 2px solid rgb(171, 5, 5) !important;
+}

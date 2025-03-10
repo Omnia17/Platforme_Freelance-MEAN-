@@ -1,0 +1,215 @@
+<!-- ============================ Page Title Start================================== -->
+<div class="page-title search-form dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <div class="_jb_details01">
+
+                    <div class="_jb_details01_flex">
+                        <div class="_jb_details01_authors">
+                            <img [src]="'http://127.0.0.1:5000/image/' + service.idUser.image" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="_jb_details01_authors_caption">
+                            <h4 class="jbs_title"> {{ service.name }} <img src="assets/img/verify.svg" class="ml-1"
+                                    width="12" alt=""></h4>
+                            <ul class="jbx_info_list">
+                                <li><span><i class="ti-briefcase"></i> {{ service.categorie }} </span></li>
+                                <li><span><i class="ti-location-pin"></i> {{ service.location }} </span></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="_jb_details01_last">
+                        <ul class="_flex_btn">
+                            <li><a (click)="scroll()" class="_applied_jb">Send Proposal</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ Page Title End ================================== -->
+
+<!-- ============================ Main Section Start ================================== -->
+<section class="gray-light">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="_job_detail_box">
+
+
+
+                    <div class="_wrap_box_slice">
+
+
+                        <div class="_job_detail_single">
+                            <h4>Job Duties:</h4>
+                            <p> {{ service.description }} </p>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="_wrap_box_slice">
+                        <div class="_job_detail_single">
+                            <h4>Project Bids( {{ proposals.length }} )</h4>
+                            <div class="_proposal_bids_list">
+
+                                <!-- Single List -->
+                                @for(proposal of proposals; track proposal._id){
+                                <div class="_proposal_bids_single">
+                                    <div class="_proposal_bids_flex">
+                                        <div class="_proposal_bids_thumb">
+                                            <img [src]=" 'http://127.0.0.1:5000/image/'+ proposal.idUser.image " class="img-fluid circle" alt="" />
+                                        </div>
+                                        <div class="_proposal_bids_caption mt-3">
+                                            <h4><a href="freelancer-detail.html"> {{ proposal.idUser.firstname + '  ' + proposal.idUser.lastname }} <img
+                                                        src="assets/img/verify.svg" class="ml-1" width="12" alt=""></a>
+                                            </h4>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="_proposal_bids_right">
+                                        <div class="_freelancer_rate">
+                                            <h4>$ {{ proposal.price }} </h4>
+                                            <span>in {{ proposal.days }} days</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="_wrap_box_slice">
+                        <div class="_job_detail_single">
+                            <h4>Send Proposal</h4>
+                            <form [formGroup]="proposalForm" (ngSubmit)="send()" class="proposal-form">
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Your Price</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"> {{"@"}} </span>
+                                                </div>
+                                                <input formControlName="price" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Days To Complete</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Days</span>
+                                                </div>
+                                                <input formControlName="days" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Cover Letter</label>
+                                            <textarea formControlName="cover" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <button type="submit" class="btn_proposal_send">Send Proposal</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12">
+
+                <div class="_jb_summary light_box">
+                    <div class="_jb_summary_largethumb">
+
+                        <img [src]="'http://127.0.0.1:5000/image/'+ service.image" class="img-fluid" alt="" />
+                    </div>
+                    <div class="_jb_summary_thumb">
+                        <img [src]="'http://127.0.0.1:5000/image/'+ service.idUser.image" class="img-fluid" alt="" />
+                    </div>
+                    <div class="_jb_summary_caption">
+                        <h4> Posted By : {{ service.idUser.firstname + ' ' + service.idUser.lastname }} </h4>
+
+                        <h4 class="pises_price">${{service.salary}} </h4>
+                    </div>
+                    <div class="_jb_summary_body">
+
+                        <div class="_view_profile_btns">
+                            <a href="employer-detail.html" class="btn btn_emplo_eloi">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="_jb_summary light_box p-4">
+                    <h4>Job Explain</h4>
+                    <ul>
+                        <li>Categorie:<span> {{ service.categorie }} </span></li>
+
+                        <li>Location:<span> {{ service.location }} </span></li>
+                        <li>Salary:<span> {{ service.salary }} </span></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ============================ Main Section End ================================== -->
+
+<!-- ============================ Call To Action Start ================================== -->
+<section class="call-to-act" style="background:#b00bec url(assets/img/landing-bg.png) no-repeat">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-7 col-md-8">
+                <div class="clt-caption text-center mb-4">
+                    <h2 class="text-light">Subscribe Now!</h2>
+                    <p class="text-light">Simple pricing plans. Unlimited web maintenance service</p>
+                </div>
+                <div class="inner-flexible-box subscribe-box">
+                    <div class="input-group">
+                        <input type="text" class="form-control large" placeholder="Enter your mail here">
+                        <button class="btn btn-subscribe bg-dark" type="button"><i
+                                class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================ Call To Action End ================================== -->

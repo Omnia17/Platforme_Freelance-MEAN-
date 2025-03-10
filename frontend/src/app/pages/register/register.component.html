@@ -1,0 +1,52 @@
+<!-- Log In Modal -->
+
+<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+    <div class="modal-content" id="registermodal">
+        <div class="modal-header">
+            <h4>Sign Up</h4>
+
+        </div>
+        <div class="modal-body">
+
+            <div class="login-form">
+                <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input formControlName="firstname" [ngClass]="{'form-control':true, 'error':registerForm.controls['firstname'].touched && registerForm.controls['firstname'].invalid}" type="text"  >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastname" [ngClass]="{'form-control':true, 'error':registerForm.controls['lastname'].touched && registerForm.controls['lastname'].invalid}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="text" formControlName="email" [ngClass]="{'form-control':true, 'error':registerForm.controls['email'].touched && registerForm.controls['email'].invalid}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password"  type="text" formControlName="password" [ngClass]="{'form-control':true, 'error':registerForm.controls['password'].touched && registerForm.controls['password'].invalid}">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" [disabled]="registerForm.invalid" class="btn dark-2 btn-md full-width pop-login">Register</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <div class="mf-link"><i class="ti-user"></i>Have An Account?<a routerLink="/login" class="theme-cl">
+                    Sign In</a></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Modal -->

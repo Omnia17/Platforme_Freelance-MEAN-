@@ -1,0 +1,44 @@
+ <!-- Log In Modal -->
+
+ <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+    <div class="modal-content" id="registermodal">
+        <div class="modal-header">
+            <h4>Sign In</h4>
+
+        </div>
+        <div class="modal-body">
+
+            <div class="login-form">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="text" formControlName="email" [ngClass]="{'form-control':true, 'error':loginForm.controls['email'].touched && loginForm.controls['email'].invalid}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" [ngClass]="{ 'form-control': true, 'error': loginForm.controls['password'].touched &&  loginForm.controls['password'].invalid }">
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" [disabled]="loginForm.invalid"  class="btn dark-2 btn-md full-width pop-login">Login</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <div class="mf-link"><i class="ti-user"></i>Haven't An Account?<a routerLink="/register"
+                    class="theme-cl">
+                    Sign Up</a></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Modal -->

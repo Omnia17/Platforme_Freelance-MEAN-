@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- Breadcrumbs -->
+        <div class="bredcrumb_wrap">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Manage Bidders</li>
+              </ol>
+            </nav>	
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        
+        <!-- Single Wrap -->
+        <div class="_dashboard_content">
+            <div class="_dashboard_content_header">
+                <div class="_dashboard__header_flex">
+                    <h4><i class="fa fa-user mr-1"></i>Manage Bidders</h4>	
+                </div>
+            </div>
+            
+            <div class="_dashboard_content_body">
+                <div class="row">
+                    
+                    
+                    @for(proposal of proposals; track proposal._id){
+                         <!-- Single List -->
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="_dash_grid_box">
+                            <div class="_dash_remove_wrap"><a (click)="delete(proposal._id)" data-toggle="tooltip" data-placement="top" title="Remove" class="_trash_removeal"><i class="fa fa-trash"></i></a></div>
+                            <div class="_dash_grid_box_thumb">
+                                <img [src]=" 'http://127.0.0.1:5000/image/' + proposal.idUser.image " class="img-fluid circle">
+                            </div>
+                            <div class="_dash_grid_box_caption">
+
+                                <h4 class="_elcio_title"><a href="#"> {{ proposal.idUser.firstname + ' ' + proposal.idUser.lastname }} </a></h4>
+                              
+                                
+                                <div class="_dash_usr_bid_rate">
+                                    <ul>
+                                        <li>$ {{ proposal.price }} <span>Fixed price</span></li>
+                                        <li>{{ proposal.days }} Days<span>Delivery Time</span></li>
+                                    </ul>																
+                                </div>
+                                
+                                <div class="_dash_usr_actioned">
+                                    <ul>
+                                        
+                                        @if(proposal.status == false){
+                                            <li><a (click)="accept(proposal._id)" data-toggle="tooltip" data-placement="top" title="Accept Offer" class="_download_cv"><i class="fa fa-check"></i>Accept Offer</a></li>
+                                        }@else {
+                                            <li><a  data-toggle="tooltip" data-placement="top" title="Accept Offer" class="_download_cv"><i class="fa fa-check"></i>Accepted</a></li>
+                                        }
+
+                                    </ul>																
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    }
+              
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Single Wrap End -->
+        
+    </div>
+</div>
