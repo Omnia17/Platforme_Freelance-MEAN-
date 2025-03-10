@@ -1,0 +1,19 @@
+# Frontend and Backend node_modules
+# Node.js (backend)
+node_modules/
+.env
+dist/
+build/
+logs/
+package-lock.json
+
+# Angular (frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.env
+
+# General
+.DS_Store
+.idea/
+.vscode/
