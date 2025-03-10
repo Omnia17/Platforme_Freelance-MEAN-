@@ -1,6 +1,6 @@
-# MARN Freelance Platform
+# MEAN Freelance Platform
 
-This is a **MARN** project (MongoDB, Angular, Express, Node.js) that serves as a basic freelance platform where users can create services, submit proposals for services, and manage their profile. This project is developed with the purpose of learning the MEAN stack and applying it in a practical scenario.
+This is a **MEAN** project (MongoDB, Express, Angular, Node.js) that serves as a basic freelance platform where users can create services, submit proposals for services, and manage their profile. This project is developed with the purpose of learning the MEAN stack and applying it in a practical scenario.
 
 ## Features
 
@@ -17,4 +17,8 @@ This is a **MARN** project (MongoDB, Angular, Express, Node.js) that serves as a
 
 - **Frontend**:
   - Angular
+## Disclaimer
 
+Please note that this is a **personal project** that is still in the early stages of development. I am a **junior developer** working to improve my skills and gain practical experience. 
+
+The project is a work in progress, and features may be added, modified, or refined over time. Feedback and contributions are more than welcome!
