@@ -9,8 +9,6 @@ package-lock.json
 
 # Angular (frontend)
 frontend/node_modules/
-frontend/dist/
-frontend/.angular/
 frontend/.env
 
 # General
